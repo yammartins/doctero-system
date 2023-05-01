@@ -5,5 +5,13 @@
   "repository": "https://github.com/yammartins/doctero-system",
   "author": "Yam P. Martins",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "devDependencies": {
+    "tsup": "^6.7.0",
+    "typescript": "^5.0.4"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts",
+    "dev": "tsup src/index.ts --format esm,cjs --dts --watch"
+  }
 }
