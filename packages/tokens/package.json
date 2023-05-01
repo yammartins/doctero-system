@@ -1,0 +1,9 @@
+{
+  "name": "@doctero/tokens",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/yammartins/doctero-system",
+  "author": "Yam P. Martins",
+  "license": "MIT",
+  "private": false
+}
