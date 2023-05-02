@@ -11,11 +11,13 @@
   "devDependencies": {
     "@doctero-ui/ts-config": "*",
     "@doctero-ui/tokens": "*",
+    "@doctero-ui/eslint-config": "*",
     "tsup": "^6.7.0",
     "typescript": "^5.0.4"
   },
   "scripts": {
     "build": "tsup src/index.ts --format esm,cjs --dts",
-    "dev": "tsup src/index.ts --format esm,cjs --dts --watch"
+    "dev": "tsup src/index.ts --format esm,cjs --dts --watch",
+    "lint": "eslint src/**/*.ts* --fix"
   }
 }
