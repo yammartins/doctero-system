@@ -1,0 +1,8 @@
+{
+  "name": "@doctero-ui/ts-config",
+  "version": "1.0.0",
+  "repository": "https://github.com/yammartins/doctero-system",
+  "author": "Yam <yamprado2010@hotmail.com>",
+  "license": "MIT",
+  "private": true
+}
