@@ -1,2 +1,3 @@
+declare function Button(): JSX.Element;
 
-export { }
+export { Button };

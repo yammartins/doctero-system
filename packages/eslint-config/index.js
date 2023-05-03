@@ -17,12 +17,13 @@ module.exports = {
 	},
 	'plugins': [
 		'react',
+		'plugin:react/jsx-runtime',
 		'@typescript-eslint'
 	],
 	'rules': {
 		'indent': [
 			'error',
-			'tab'
+			'space'
 		],
 		'linebreak-style': [
 			'error',
