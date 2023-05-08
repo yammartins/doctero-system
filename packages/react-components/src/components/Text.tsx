@@ -1,7 +1,7 @@
 import { useCallback } from "react"
 import classNames from 'classnames'
 
-interface TextProps {
+export interface TextProps {
   label: string;
   className?: string;
   family?: 'jakarta' | 'poppins' | 'red-hat' | 'roboto';

@@ -19,7 +19,7 @@
     window.FRAMEWORK_OPTIONS = {};
     window.CHANNEL_OPTIONS = {};
     window.FEATURES = {"warnOnLegacyHierarchySeparator":true,"buildStoriesJson":false,"storyStoreV7":true,"argTypeTargetsV7":true,"legacyDecoratorFileOrder":false};
-    window.STORIES = [{"titlePrefix":"","directory":"./stories","files":"**/*.mdx","importPathMatcher":"^\\.[\\\\/](?:stories(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)\\/|\\/|$)(?!\\.)(?=.)[^/]*?\\.mdx)$"},{"titlePrefix":"","directory":"./stories","files":"**/*.stories.@(js|jsx|ts|tsx)","importPathMatcher":"^\\.[\\\\/](?:stories(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)\\/|\\/|$)(?!\\.)(?=.)[^/]*?\\.stories\\.(js|jsx|ts|tsx))$"}];
+    window.STORIES = [{"titlePrefix":"","directory":"./src/pages","files":"**/*.stories.mdx","importPathMatcher":"^\\.[\\\\/](?:src\\/pages(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)\\/|\\/|$)(?!\\.)(?=.)[^/]*?\\.stories\\.mdx)$"},{"titlePrefix":"","directory":"./src/pages","files":"**/**/*.stories.mdx","importPathMatcher":"^\\.[\\\\/](?:src\\/pages(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)\\/|\\/|$)(?!\\.)(?=.)[^/]*?\\.stories\\.mdx)$"},{"titlePrefix":"","directory":"./src/stories","files":"**/*.stories.tsx","importPathMatcher":"^\\.[\\\\/](?:src\\/stories(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)\\/|\\/|$)(?!\\.)(?=.)[^/]*?\\.stories\\.tsx)$"}];
     window.DOCS_OPTIONS = {"defaultName":"Docs","autodocs":"tag"};
     window.SERVER_CHANNEL_URL = undefined;
 
@@ -357,8 +357,12 @@
     console.warn('unable to connect to top frame for connecting dev tools');
   }
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&family=Poppins:wght@400;500;700&family=Red+Hat+Display:wght@400;600&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
 
-  <script type="module" crossorigin src="./assets/iframe-e3b71760.js"></script>
+
+  <script type="module" crossorigin src="./assets/iframe-4cb89bc4.js"></script>
 </head>
 
 <body>
