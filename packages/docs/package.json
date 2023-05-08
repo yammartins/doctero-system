@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@doctero-ui/eslint-config": "*",
+    "@doctero-ui/ts-config": "*",
     "@doctero-ui/react-components": "*",
     "@doctero-ui/tokens": "*",
     "polished": "^4.2.2",

@@ -1,10 +1,13 @@
-import React from 'react'
 import { colors } from '@doctero-ui/tokens'
 import { getContrast } from 'polished'
 
 export function ColorsGrid() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', width: '100%' }}>
+      <div>
+        <h1 style={{ font: '600 1.875rem sans-serif', marginLeft: '0.5rem', color: '#FFF'}}>Colors</h1>
+        <p style={{ font: '500 1rem sans-serif', marginLeft: '0.5rem', color: '#ccc'}} >Essas são as cores utilizadas na Doctero UI.</p>
+      </div>
       {/** Primary */}
       <div 
         style={{ 
