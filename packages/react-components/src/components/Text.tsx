@@ -8,7 +8,7 @@ export interface TextProps {
   size?: 'xxs' | 'xs' | 'sm' | 'base' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl' | '7xl' | '8xl' | '9xl';
   weight?: 'regular' | 'medium' | 'semibold' | 'bold' | 'black',
   height?: 'xs' | 'sm' | 'base' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl' | '7xl' | '8xl' | '9xl';
-  type?: 'small' | 'span' | 'strong' | 'b' | 'i' | 'p' | 'h6' | 'h5' | 'h4';
+  type?: 'small' | 'span' | 'strong' | 'label' | 'b' | 'i' | 'p' | 'h6' | 'h5' | 'h4';
   align?: 'left' | 'center' | 'right'
 }
 
@@ -90,6 +90,8 @@ export function Text({
   const TextRender = useCallback(() => {
     if (type === 'small') return <small className={styled}>{label}</small>
     if (type === 'span') return <span className={styled}>{label}</span>
+    if (type === 'strong') return <strong className={styled}>{label}</strong>
+    if (type === 'label') return <label className={styled}>{label}</label>
     if (type === 'b') return <b className={styled}>{label}</b>
     if (type === 'i') return <i className={styled}>{label}</i>
     if (type === 'p') return <p className={styled}>{label}</p>

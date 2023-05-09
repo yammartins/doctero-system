@@ -8,6 +8,12 @@ export default {
     label: 'Insira um texto qualquer...'
   },
   argTypes: {
+    type: {
+      options: ['small', 'span', 'strong', 'label', 'b', 'i', 'p', 'h6', 'h5', 'h4'],
+      control: {
+        type: 'select',
+      }
+    },
     size: {
       options: ['xxs', 'xs', 'sm', 'base', 'md', 'lg', 'xl', '2xl', '3xl', '4xl', '5xl', '6xl', '7xl', '8xl', '9xl'],
       control: {
