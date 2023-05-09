@@ -1,5 +1,6 @@
-/** @type { import('@storybook/react-vite').StorybookConfig } */
-const config = {
+import { StorybookConfig } from '@storybook/react-vite'
+
+const config: StorybookConfig = {
   stories: [
   "../src/pages/**/*.stories.mdx", 
   "../src/pages/**/**/*.stories.mdx",  
@@ -9,7 +10,8 @@ const config = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
-    "storybook-dark-mode"
+    "storybook-dark-mode",
+    "@storybook/addon-styling"
   ],
   core: {
     builder: '@storybook/builder-vite',

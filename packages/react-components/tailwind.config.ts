@@ -1,3 +1,5 @@
+import { Config } from 'tailwindcss'
+
 import { 
   colors,
   borderRadius,
@@ -7,12 +9,9 @@ import {
   lineHeight,
  } from '@doctero-ui/tokens'
 
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   content: [
-    "./src/**/*.tsx",
-    "./src/**/**/*.tsx",
-    "./src/**/**/*.css"
+    "./src/components/*.tsx",
   ],
   theme: {
     colors,
@@ -25,5 +24,5 @@ module.exports = {
     extend: {},
   },
   plugins: [],
-}
+} as Config
 

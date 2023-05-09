@@ -5,13 +5,49 @@ export default {
   title: 'Typography/Text',
   component: Text,
   args: {
-    label: 'Vasco da Gama'
+    label: 'Insira um texto qualquer...'
+  },
+  argTypes: {
+    size: {
+      options: ['xxs', 'xs', 'sm', 'base', 'md', 'lg', 'xl', '2xl', '3xl', '4xl', '5xl', '6xl', '7xl', '8xl', '9xl'],
+      control: {
+        type: 'select',
+      },
+    },
+    height: {
+      options: ['xs', 'sm', 'base', 'md', 'lg', 'xl', '2xl', '3xl', '4xl', '5xl', '6xl', '7xl', '8xl', '9xl'],
+      control: {
+        type: 'select',
+      },
+    },
+    family: {
+      options: ['jakarta', 'poppins', 'red-hat', 'roboto'],
+      control: {
+        type: 'inline-radio',
+      }
+    },
+    weight: {
+      options: ['regular', 'medium', 'semibold', 'bold', 'black'],
+      control: {
+        type: 'inline-radio',
+      }
+    },
+    align: {
+      options: ['left', 'center', 'right'],
+      control: {
+        type: 'inline-radio',
+      }
+    },
   }  
 } as Meta<TextProps>
 
 export const Primary: StoryObj<TextProps> = {
   args: {
-    size: 'md',
+    type: 'p',
+    size: 'base',
+    align: 'left',
+    weight: 'regular',
+    height: 'base',
     family: 'red-hat'
   }
 }
