@@ -1,3 +1,4 @@
 {
+  "root": true,
   "extends": "@doctero-ui/eslint-config"
 }
