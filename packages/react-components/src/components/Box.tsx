@@ -1,12 +1,15 @@
-import { ReactNode } from 'react'
+import { HTMLAttributes, ReactNode } from 'react'
 
-export interface BoxProps {
+export interface BoxProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode
 }
 
-export function Box({ children }: BoxProps) {
+export function Box({ children, ...rest }: BoxProps) {
   return (
-    <div className="rounded-base border border-gray-400 bg-gray-300 p-4">
+    <div
+      {...rest}
+      className="rounded-base border border-gray-400 bg-gray-300 p-4"
+    >
       {children}
     </div>
   )

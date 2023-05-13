@@ -6,18 +6,23 @@ import classNames from 'classnames'
 export interface TooltipProps {
   children: ReactNode
   label: string
-  direction: 'left' | 'top' | 'right' | 'bottom'
-  size: 'xs' | 'sm' | 'base' | 'md' | 'lg'
+  direction?: 'left' | 'top' | 'right' | 'bottom'
+  size?: 'xs' | 'sm' | 'base' | 'md' | 'lg'
 }
 
-export function Tooltip({ children, label, direction, size }: TooltipProps) {
+export function Tooltip({
+  children,
+  label,
+  direction = 'left',
+  size = 'base',
+}: TooltipProps) {
   const [show, onShow] = useState(false)
 
   const tooltipDirection = {
-    left: 'left-full animate-slideLeftAndFade',
-    top: 'top-full animate-slideUpAndFade',
-    right: 'right-full animate-slideRightAndFade',
-    bottom: 'bottom-full animate-slideDownAndFade',
+    left: 'left-full animate-slideRightAndFade',
+    top: 'top-full animate-slideDownAndFade',
+    right: 'right-full animate-slideLeftAndFade',
+    bottom: 'bottom-full animate-slideUpAndFade',
   }
 
   const tooltipSize = {
@@ -31,13 +36,13 @@ export function Tooltip({ children, label, direction, size }: TooltipProps) {
   const styled = {
     base: classNames(
       show && 'flex',
-      'tooltip hidden relative h-10 w-10 transition-all',
+      'tooltip relative flex-col transition z-[99]',
     ),
     bubble: classNames(
       direction && tooltipDirection[direction],
       size && tooltipSize[size],
-      show && 'flex',
-      'tooltip-bubble transition hidden rounded-sm bg-gray-600 p-2 items-center justify-center',
+      show && 'opacity-100 pointer-events-auto',
+      'tooltip-bubble absolute opacity-0 pointer-events-none rounded-sm bg-gray-600 p-2 items-center justify-center',
     ),
   }
 
@@ -47,9 +52,12 @@ export function Tooltip({ children, label, direction, size }: TooltipProps) {
       onMouseEnter={() => onShow(true)}
       onMouseLeave={() => onShow(false)}
     >
-      <div className="">
-        <div className={styled.bubble}>
-          <Text label={label} className="text-gray-200" />
+      <div className="relative w-40">
+        <div
+          data-direction={direction}
+          className={`animate-slideDownAndFade ${styled.bubble}`}
+        >
+          <Text label={label} className="text-black" />
         </div>
         <div className="">{children}</div>
       </div>
