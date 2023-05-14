@@ -1,14 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Text, Box, type BoxProps } from '@doctero-ui/react-components' 
+import { Box, type BoxProps } from '@doctero-ui/react-components'
 
 export default {
-  title: 'Typography/Box',
+  title: 'Surfaces/Box',
   component: Box,
-  args: {
-    children: (
-      <Text label="Componente de Box - Doctero UI" />  
-    )
-  },  
 } as Meta<BoxProps>
 
 export const Primary: StoryObj<BoxProps> = {}

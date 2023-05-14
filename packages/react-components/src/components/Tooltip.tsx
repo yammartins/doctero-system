@@ -1,13 +1,14 @@
-import { useState, ReactNode } from 'react'
+import { ReactNode } from 'react'
+import * as RadixTooltip from '@radix-ui/react-tooltip'
+import classNames from 'classnames'
 
 import { Text } from './Text'
-import classNames from 'classnames'
 
 export interface TooltipProps {
   children: ReactNode
   label: string
   direction?: 'left' | 'top' | 'right' | 'bottom'
-  size?: 'xs' | 'sm' | 'base' | 'md' | 'lg'
+  size?: 'xs' | 'sm' | 'base' | 'md' | 'lg' | 'xl'
 }
 
 export function Tooltip({
@@ -16,51 +17,45 @@ export function Tooltip({
   direction = 'left',
   size = 'base',
 }: TooltipProps) {
-  const [show, onShow] = useState(false)
-
   const tooltipDirection = {
-    left: 'left-full animate-slideRightAndFade',
-    top: 'top-full animate-slideDownAndFade',
-    right: 'right-full animate-slideLeftAndFade',
-    bottom: 'bottom-full animate-slideUpAndFade',
+    left: 'data-[state=delayed-open]:data-[side=left]:animate-slide-right-and-fade right-0',
+    top: 'data-[state=delayed-open]:data-[side=top]:animate-slide-bottom-and-fade bottom-0',
+    right:
+      'data-[state=delayed-open]:data-[side=right]:animate-slide-left-and-fade left-0',
+    bottom:
+      'data-[state=delayed-open]:data-[side=bottom]:animate-slide-up-and-fade top-0',
   }
 
   const tooltipSize = {
-    xs: 'w-24',
-    sm: 'w-28',
-    base: 'w-32',
-    md: 'w-36',
-    lg: 'w-40',
+    xs: 'w-20',
+    sm: 'w-24',
+    base: 'w-28',
+    md: 'w-32',
+    lg: 'w-36',
+    xl: 'w-40',
   }
 
   const styled = {
-    base: classNames(
-      show && 'flex',
-      'tooltip relative flex-col transition z-[99]',
-    ),
-    bubble: classNames(
+    content: classNames(
       direction && tooltipDirection[direction],
       size && tooltipSize[size],
-      show && 'opacity-100 pointer-events-auto',
-      'tooltip-bubble absolute opacity-0 pointer-events-none rounded-sm bg-gray-600 p-2 items-center justify-center',
+      'relative rounded-base bg-gray-800 p-2 text-gray-300 leading-none shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] will-change-[transform,opacity]',
     ),
   }
 
   return (
-    <div
-      className={styled.base}
-      onMouseEnter={() => onShow(true)}
-      onMouseLeave={() => onShow(false)}
-    >
-      <div className="relative w-40">
-        <div
-          data-direction={direction}
-          className={`animate-slideDownAndFade ${styled.bubble}`}
-        >
-          <Text label={label} className="text-black" />
-        </div>
-        <div className="">{children}</div>
-      </div>
-    </div>
+    <RadixTooltip.Provider delayDuration={300}>
+      <RadixTooltip.Root>
+        <RadixTooltip.Trigger asChild>
+          <div>{children}</div>
+        </RadixTooltip.Trigger>
+        <RadixTooltip.Portal>
+          <RadixTooltip.Content side={direction} className={styled.content}>
+            <Text align="center" label={label} />
+            <RadixTooltip.Arrow className="fill-gray-800" />
+          </RadixTooltip.Content>
+        </RadixTooltip.Portal>
+      </RadixTooltip.Root>
+    </RadixTooltip.Provider>
   )
 }

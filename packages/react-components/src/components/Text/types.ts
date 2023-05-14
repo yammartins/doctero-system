@@ -2,7 +2,6 @@ import { HTMLAttributes } from 'react'
 
 export interface TextProps extends HTMLAttributes<HTMLParagraphElement> {
   label: string
-  className?: string
   family?: 'jakarta' | 'poppins' | 'red-hat' | 'roboto'
   size?:
     | 'xxs'

@@ -1,3 +1,4 @@
+import '@doctero-ui/react-components/src/styles/index.css'
 import '@doctero-ui/react-components/src/styles/main.css'
 import { Preview } from '@storybook/react'
 
