@@ -96,6 +96,6 @@ export const Primary: StoryObj<TextProps> = {
     align: 'left',
     weight: 'regular',
     height: 'base',
-    family: 'red-hat',
+    family: 'roboto',
   },
 }

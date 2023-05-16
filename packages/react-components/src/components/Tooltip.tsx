@@ -2,7 +2,7 @@ import { ReactNode } from 'react'
 import * as RadixTooltip from '@radix-ui/react-tooltip'
 import classNames from 'classnames'
 
-import { Text } from './Text'
+import { Text } from './typograph/Text'
 
 export interface TooltipProps {
   children: ReactNode

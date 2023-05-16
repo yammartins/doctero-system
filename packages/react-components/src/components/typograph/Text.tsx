@@ -85,9 +85,6 @@ export function Text({
     if (type === 'b') return <b className={styled}>{label}</b>
     if (type === 'i') return <i className={styled}>{label}</i>
     if (type === 'p') return <p className={styled}>{label}</p>
-    if (type === 'h6') return <h6 className={styled}>{label}</h6>
-    if (type === 'h5') return <h5 className={styled}>{label}</h5>
-    if (type === 'h4') return <h4 className={styled}>{label}</h4>
 
     return <p>{label}</p>
   }, [label, styled, type])
