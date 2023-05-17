@@ -1,6 +1,6 @@
 import { useCallback } from 'react'
 import classNames from 'classnames'
-import { HeadingProps } from './types'
+import type { HeadingProps } from './types'
 
 export function Heading({
   label,
@@ -10,6 +10,7 @@ export function Heading({
   weight = 'regular',
   height = 'base',
   type = 'h2',
+  children,
   ...rest
 }: HeadingProps) {
   const textAlign = {
@@ -64,15 +65,15 @@ export function Heading({
   )
 
   const TextRender = useCallback(() => {
-    if (type === 'h6') return <h6 className={styled}>{label}</h6>
-    if (type === 'h5') return <h5 className={styled}>{label}</h5>
-    if (type === 'h4') return <h4 className={styled}>{label}</h4>
-    if (type === 'h3') return <h3 className={styled}>{label}</h3>
-    if (type === 'h2') return <h2 className={styled}>{label}</h2>
-    if (type === 'h1') return <h1 className={styled}>{label}</h1>
+    if (type === 'h6') return <h6 className={styled}>{label || children}</h6>
+    if (type === 'h5') return <h5 className={styled}>{label || children}</h5>
+    if (type === 'h4') return <h4 className={styled}>{label || children}</h4>
+    if (type === 'h3') return <h3 className={styled}>{label || children}</h3>
+    if (type === 'h2') return <h2 className={styled}>{label || children}</h2>
+    if (type === 'h1') return <h1 className={styled}>{label || children}</h1>
 
     return <h2>{label}</h2>
-  }, [label, styled, type])
+  }, [label, styled, type, children])
 
   return <TextRender />
 }

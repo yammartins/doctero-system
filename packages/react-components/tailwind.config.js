@@ -47,6 +47,9 @@ module.exports = {
         'slide-right-and-fade':
           'slide-right-and-fade 400ms cubic-bezier(0.16, 1, 0.3, 1)',
       },
+      transitionProperty: {
+        position: 'left, top, right, bottom',
+      },
     },
   },
   plugins: [],

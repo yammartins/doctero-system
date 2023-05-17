@@ -1,69 +1,27 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Box, Text, type TextProps } from '@doctero-ui/react-components'
+import { Box, Heading, type HeadingProps } from '@doctero-ui/react-components'
 
 export default {
-  title: 'Typography/Text',
-  component: Text,
+  title: 'Typography/Heading',
+  component: Heading,
   args: {
     align: 'left',
   },
   argTypes: {
     type: {
-      options: [
-        'small',
-        'span',
-        'strong',
-        'label',
-        'b',
-        'i',
-        'p',
-        'h6',
-        'h5',
-        'h4',
-      ],
+      options: ['h6', 'h5', 'h4', 'h3', 'h2', 'h1'],
       control: {
         type: 'select',
       },
     },
     size: {
-      options: [
-        'xxs',
-        'xs',
-        'sm',
-        'base',
-        'md',
-        'lg',
-        'xl',
-        '2xl',
-        '3xl',
-        '4xl',
-        '5xl',
-        '6xl',
-        '7xl',
-        '8xl',
-        '9xl',
-      ],
+      options: ['xl', '2xl', '3xl', '4xl', '5xl', '6xl', '7xl', '8xl', '9xl'],
       control: {
         type: 'select',
       },
     },
     height: {
-      options: [
-        'xs',
-        'sm',
-        'base',
-        'md',
-        'lg',
-        'xl',
-        '2xl',
-        '3xl',
-        '4xl',
-        '5xl',
-        '6xl',
-        '7xl',
-        '8xl',
-        '9xl',
-      ],
+      options: ['xs', 'sm', 'base', 'md', 'lg', 'xl'],
       control: {
         type: 'select',
       },
@@ -87,12 +45,12 @@ export default {
       },
     },
   },
-} as Meta<TextProps>
+} as Meta<HeadingProps>
 
-export const Primary: StoryObj<TextProps> = {
+export const Primary: StoryObj<HeadingProps> = {
   args: {
-    type: 'p',
-    size: 'base',
+    type: 'h2',
+    size: '2xl',
     align: 'left',
     weight: 'regular',
     height: 'base',
@@ -102,7 +60,7 @@ export const Primary: StoryObj<TextProps> = {
     (Story) => {
       return (
         <Box>
-          <Text label="Doctero UI - Text" />
+          <Heading label="Doctero UI - Heading" />
           {Story()}
         </Box>
       )

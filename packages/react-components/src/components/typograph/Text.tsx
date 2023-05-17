@@ -1,6 +1,6 @@
 import { useCallback } from 'react'
 import classNames from 'classnames'
-import { TextProps } from './types'
+import type { TextProps } from './types'
 
 export function Text({
   label,
@@ -10,6 +10,8 @@ export function Text({
   weight = 'regular',
   height = 'base',
   type = 'p',
+  children,
+  className,
   ...rest
 }: TextProps) {
   const textAlign = {
@@ -74,20 +76,25 @@ export function Text({
     textSizes[size],
     textWeight[weight],
     fontFamily[family],
+    className,
     rest,
   )
 
   const TextRender = useCallback(() => {
-    if (type === 'small') return <small className={styled}>{label}</small>
-    if (type === 'span') return <span className={styled}>{label}</span>
-    if (type === 'strong') return <strong className={styled}>{label}</strong>
-    if (type === 'label') return <label className={styled}>{label}</label>
-    if (type === 'b') return <b className={styled}>{label}</b>
-    if (type === 'i') return <i className={styled}>{label}</i>
-    if (type === 'p') return <p className={styled}>{label}</p>
+    if (type === 'small')
+      return <small className={styled}>{label || children}</small>
+    if (type === 'span')
+      return <span className={styled}>{label || children}</span>
+    if (type === 'strong')
+      return <strong className={styled}>{label || children}</strong>
+    if (type === 'label')
+      return <label className={styled}>{label || children}</label>
+    if (type === 'b') return <b className={styled}>{label || children}</b>
+    if (type === 'i') return <i className={styled}>{label || children}</i>
+    if (type === 'p') return <p className={styled}>{label || children}</p>
 
     return <p>{label}</p>
-  }, [label, styled, type])
+  }, [label, styled, type, children])
 
   return <TextRender />
 }

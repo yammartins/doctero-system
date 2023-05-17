@@ -1,0 +1,21 @@
+@layer components {
+  .base-form-content:focus-within {
+    @apply transition-colors border-gray-1000;
+  }
+
+  .base-form-content:focus-within label {
+    @apply text-xs top-0.5 left-2.5 text-gray-800 font-semibold;
+  }
+
+  .base-form-content:has(input:not(:placeholder-shown)) label {
+    @apply text-xs top-0.5 left-2.5 text-gray-800 font-semibold;
+  }
+
+  .is-loading label {
+    @apply text-xs top-0.5 left-2.5 text-gray-800 font-semibold;
+  }
+
+  .is-loading input {
+    @apply opacity-0;
+  }
+}
