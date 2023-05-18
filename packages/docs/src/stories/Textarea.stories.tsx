@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Input, Box, type InputProps } from '@doctero-ui/react-components'
+import { TextArea, Box, type TextAreaProps } from '@doctero-ui/react-components'
 
 export default {
-  title: 'Form/Input',
-  component: Input,
+  title: 'Form/Textarea',
+  component: TextArea,
   args: {
     name: 'doctero',
-    label: 'Doctero UI - Input',
+    label: 'Doctero UI - Textarea',
     placeholder: 'Insira um texto qualquer ...',
     loading: false,
     error: '',
@@ -17,6 +17,6 @@ export default {
       return <Box>{Story()}</Box>
     },
   ],
-} as Meta<InputProps>
+} as Meta<TextAreaProps>
 
-export const Primary: StoryObj<InputProps> = {}
+export const Primary: StoryObj<TextAreaProps> = {}

@@ -1,3 +1,4 @@
 export { Input } from './Input'
+export { TextArea } from './Textarea'
 
-export type { InputProps } from './types'
+export type { InputProps, TextAreaProps } from './types'

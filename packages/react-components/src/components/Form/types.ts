@@ -1,4 +1,4 @@
-import { InputHTMLAttributes, ReactNode } from 'react'
+import { InputHTMLAttributes, ReactNode, TextareaHTMLAttributes } from 'react'
 
 export interface BaseProps {
   label: string
@@ -11,6 +11,12 @@ export interface BaseProps {
 
 export interface InputProps
   extends InputHTMLAttributes<HTMLInputElement>,
+    BaseProps {
+  name: string
+}
+
+export interface TextAreaProps
+  extends TextareaHTMLAttributes<HTMLTextAreaElement>,
     BaseProps {
   name: string
 }

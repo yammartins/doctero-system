@@ -7,9 +7,25 @@
     @apply text-xs top-0.5 left-2.5 text-gray-800 font-semibold;
   }
 
+  /** simulating onBlur effect */
   .base-form-content:has(input:not(:placeholder-shown)) label {
     @apply text-xs top-0.5 left-2.5 text-gray-800 font-semibold;
   }
+
+  .base-form-content:has(textarea:not(:placeholder-shown)) label {
+    @apply text-xs top-0.5 left-2.5 text-gray-800 font-semibold;
+  }
+  /** */
+
+  /** error scenario */
+  .base-form-error {
+    @apply !border-danger-600;
+  }
+
+  .base-form-error label {
+    @apply !text-danger-600;
+  }
+  /** */
 
   .is-loading label {
     @apply text-xs top-0.5 left-2.5 text-gray-800 font-semibold;
