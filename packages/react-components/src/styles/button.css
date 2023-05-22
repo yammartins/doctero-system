@@ -1,0 +1,56 @@
+.button-primary {
+  @apply bg-blue-700 text-white;
+}
+
+.button-primary:not(:disabled):hover,
+.button-primary:not(:disabled):focus {
+  @apply bg-blue-800;
+}
+
+.button-secondary {
+  @apply bg-green-700 text-white;
+}
+
+.button-secondary:not(:disabled):hover,
+.button-secondary:not(:disabled):focus {
+  @apply bg-green-600;
+}
+
+.button-tertiary {
+  @apply bg-purple-700 text-white;
+}
+  
+.button-tertiary:not(:disabled):hover,
+.button-tertiary:not(:disabled):focus {
+  @apply bg-purple-600;
+}
+
+.button-outline {
+  @apply text-blue-700 border-blue-700;
+}
+    
+.button-outline:not(:disabled):hover,
+.button-outline:not(:disabled):focus {
+  @apply text-white bg-blue-700;
+}
+
+/** sizes */
+.button-xs {
+  @apply py-1.5 px-3;
+}
+
+.button-sm {
+  @apply py-2 px-4;
+}
+
+.button-md {
+  @apply py-2 px-6;   
+}
+
+.button-lg {
+  @apply py-2 px-8;
+}
+
+button:disabled {
+  @apply bg-opacity-50 cursor-not-allowed;
+}
